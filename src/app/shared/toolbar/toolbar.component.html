@@ -1,0 +1,23 @@
+<mat-toolbar>
+    <button mat-icon-button class="icon" 
+        (click)="sendToggle()"
+        aria-label="showMenu">
+        <mat-icon *ngIf="!isOpen">menu</mat-icon>
+        <mat-icon *ngIf="isOpen">close</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <span style="flex: 1 1 auto;"></span>
+    <div>
+        <button mat-icon-button matTooltip="Switch Apps">
+            <mat-icon>apps</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Notifications">
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="My Account">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

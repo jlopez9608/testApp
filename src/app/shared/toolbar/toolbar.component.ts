@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,12 +9,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   @Output() eventToggle = new EventEmitter<any>();
-  constructor() { }
+  isOpen: boolean;
+  constructor() { 
+    this.isOpen = false;
+  }
 
   ngOnInit(): void {
   }
 
   sendToggle(){
     this.eventToggle.emit();
+    this.isOpen = environment.isOpen;
+    environment.isOpen?environment.isOpen=false:environment.isOpen=true;
+    
+    console.log(environment.isOpen);
   }
 }

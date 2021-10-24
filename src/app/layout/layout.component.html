@@ -1,2 +1,5 @@
-<app-toolbar (eventToggle)="recievedToggle()"></app-toolbar>
-<app-sidebar [isOpened]="isOpen"></app-sidebar>
+<app-toolbar (eventToggle)="recievedToggle()" style="z-index: 100;"></app-toolbar>
+<div class="container-fluid" style="z-index: -1; position: absolute;">
+    <router-outlet></router-outlet>
+</div>
+<app-sidebar [isOpened]="isOpen" style="z-index: 100;"></app-sidebar>

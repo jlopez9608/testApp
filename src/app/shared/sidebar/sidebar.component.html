@@ -1,7 +1,55 @@
 <mat-sidenav-container class="sideDesign">
-    <mat-sidenav #sidenav mode="over" [(opened)]="isOpened">Start</mat-sidenav>
-
-    <mat-sidenav-content>
-        {{ isOpened }}
-    </mat-sidenav-content>
+    <mat-sidenav #sidenav mode="side" [(opened)]="this.isOpened" [class.mat-elevation-z4]="true">
+        <br>
+        <mat-nav-list>
+            <mat-list-item>
+                <div class="container">
+                    <button routerLink="/home/dashboard" (click)="hideMenu()" mat-button>
+                        <mat-icon>home</mat-icon>Home
+                    </button>
+                </div>
+                <br>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+                <mat-expansion-panel-header>
+                    Formularios
+                </mat-expansion-panel-header>
+                <mat-nav-list dense>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="button" mat-button>
+                                <mat-icon>account_circle</mat-icon><br> Users
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" mat-button>
+                                <mat-icon>notification_important</mat-icon> <br> Notification
+                            </button>
+                        </div>
+                    </div>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-divider></mat-divider>
+            <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+                <mat-expansion-panel-header>
+                    Privacy
+                </mat-expansion-panel-header>
+                <mat-nav-list dense>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="button" mat-button>
+                                <mat-icon>account_circle</mat-icon><br> Users
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" mat-button>
+                                <mat-icon>notification_important</mat-icon> <br> Notification
+                            </button>
+                        </div>
+                    </div>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-nav-list>
+    </mat-sidenav>
 </mat-sidenav-container>
